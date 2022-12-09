@@ -1,0 +1,20 @@
+a {
+  color: black !important;
+}
+
+.share-btns {
+  min-width: 15vw;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.share {
+  width: 30px;
+  height: 30px;
+  fill: white;
+  cursor: pointer;
+  transition: fill 0.3s ease-in-out;
+}
+.share:hover {
+  fill: rgb(255, 251, 0);
+}

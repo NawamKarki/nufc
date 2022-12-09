@@ -1,38 +1,253 @@
 .App {
   text-align: center;
+  overflow: hidden;
+  position: relative;
+  background: rgb(22, 22, 22);
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  position: fixed;
+  z-index: 90;
+  min-height: 10vh;
+  min-width: calc(10px + 100vw);
+  /* display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 50px; */
+
+  font-size: calc(10px + 1vmin);
+  color: rgb(255, 255, 255);
+}
+.clip-path {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #c94141;
+  clip-path: polygon(45% 0, 100% 0, 100% 100%, 55% 100%) !important;
+  box-shadow: 10px 5px 3px #ffffff1f;
+}
+.App-nav {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+.nav {
+  padding: 10px;
+}
+
+.title-name {
   color: white;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  width: 45%;
+  justify-content: space-between;
+}
+p {
+  font-size: 15px;
+  margin-bottom: 0 !important;
+}
+
+.nufc-logo {
+  height: 40vmin;
+}
+
+.main-body {
+  height: 100%;
+  position: relative;
+}
+.nav-logo {
+  max-width: 80px;
+  min-height: 40px;
+}
+
+.hero {
+  position: inherit;
+  width: 100vw;
+  height: 95vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero-image {
+  max-height: 80vh;
+  width: auto;
+}
+
+.pre-loader {
+  position: absolute;
+  background-color: #c91a1a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99;
+  width: 100%;
+  height: 100vh;
+  animation: hide-after 2s ease-in-out forwards;
+}
+.nufc-logo {
+  animation: logo-zoom-in 2s ease-in-out forwards;
 }
 
 .App-link {
   color: #61dafb;
 }
+.active {
+}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+footer {
+  color: white;
+  height: 5vh;
+  max-width: 1248px;
+  display: flex;
+  justify-content: space-between;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 0 5vw;
+}
+
+@keyframes logo-zoom-in {
+  0% {
+    transform: scale(0.5);
+    opacity: 1;
+    visibility: visible;
   }
-  to {
-    transform: rotate(360deg);
+  40% {
+    transform: scale(0.5);
+    opacity: 1;
   }
+  80% {
+    transform: scale(2);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(3);
+    opacity: 0;
+    visibility: hidden;
+    display: none;
+  }
+}
+@keyframes hide-after {
+  0% {
+    opacity: 1;
+    visibility: visible;
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+    display: none;
+  }
+}
+
+.navbar {
+  align-items: baseline;
+}
+
+.bg-light {
+  --bs-bg-opacity: 1;
+  background-color: #c91a1a !important;
+}
+
+.navbar-light .navbar-toggler {
+  color: rgb(0 0 0);
+  border-color: rgb(0 0 0);
+  z-index: 99;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  background: #c91a1a;
+  padding: 7px 20px;
+  border: 2px solid #a937378c;
+  border-radius: 25px;
+  z-index: 100;
+  margin: 15px;
+  box-shadow: 0px 0px 15px #625f5f4d;
+  color: white !important;
+}
+.carousel-caption {
+  color: white !important;
+  margin-bottom: 3vh;
+}
+
+#basic-navbar-nav {
+}
+
+.me-auto {
+  z-index: 99;
+}
+.aayo-nepali {
+  z-index: 99;
+  padding-right: 20px;
+}
+.aayo-text {
+  font-weight: 700;
+}
+.carousel-item {
+  padding: 0 5vw;
+  position: relative !important;
+}
+.carousel-inner {
+  margin-top: 30px;
+}
+.descp-text {
+  padding: 8px 18px;
+  font-size: 15px;
+  border-radius: 25px;
+  z-index: 100;
+  margin: 15px;
+  box-shadow: 0px 0px 15px #625f5f4d;
+  color: white !important;
+  background: #838383;
+  display: inline-block;
+}
+
+@media (max-width: 520px) {
+  .navbar-nav {
+    flex-direction: row;
+  }
+  p {
+    font-size: 11px;
+  }
+  #basic-navbar-nav {
+    flex-direction: column;
+  }
+  .clip-path {
+    z-index: -1;
+  }
+  .carousel-caption {
+    margin-top: 15px;
+    margin-bottom: -40px;
+    right: auto;
+    bottom: none;
+    left: auto;
+  }
+
+  .aayo-text {
+    font-size: 12px;
+  }
+  .aayo-nepali {
+    padding-bottom: 20px;
+  }
+  .container {
+    padding-right: 30px;
+  }
+  .share {
+    width: 15px !important;
+    height: 15px !important;
+    margin-left: 20px;
+  }
+  .descp-text {
+    font-size: 10px;
+  }
+  .toast {
+    left: 15px;
+  }
+}
+
+.toast {
+  position: absolute;
 }
